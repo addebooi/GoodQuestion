@@ -3,9 +3,17 @@ using System.Collections;
 
 public class Constants {
     public enum entityState {
-        MOVING,
-        ATTACKING,
         IDLING,
-        NRSTATES
+        MOVING,
+        CASTING,
+        DEAD,
+        NUMACTIONS
+    }
+
+    public enum ENTITYTEAM {
+        FRIEDLY,
+        NEUTRAL,
+        HOSTILE,
+        NUMTEAMS
     }
 }
