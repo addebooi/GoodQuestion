@@ -22,3 +22,15 @@ public class Constants {
         NUMSKILLTYPES
     }
 }
+
+//public class ArrayInit<T> { 
+//    public static T[] CreateArray<T>(uint length, ){
+//        T[] returnArr = new T[length];
+//        for(uint i = 0; i< length; i++) {
+//            returnArr[i] = new T();
+//        }
+
+//        return returnArr;
+//    }
+//}
+   

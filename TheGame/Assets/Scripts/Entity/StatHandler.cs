@@ -4,7 +4,6 @@ using System.Collections;
 
 
 public class StatHandler : MonoBehaviour {
-    private Stats stats;
     private Resources resources;
 
 	// Use this for initialization

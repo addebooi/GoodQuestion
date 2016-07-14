@@ -9,7 +9,6 @@ public class BaseCharacter : MonoBehaviour {
     private int _level;
     private uint _experience;
 
-    private Stats stats;
 
 	// Use this for initialization
     void Awake() {
