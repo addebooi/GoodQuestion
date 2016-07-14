@@ -16,4 +16,9 @@ public class Constants {
         HOSTILE,
         NUMTEAMS
     }
+
+    public enum skillType {
+        PROJECTILE,
+        NUMSKILLTYPES
+    }
 }
