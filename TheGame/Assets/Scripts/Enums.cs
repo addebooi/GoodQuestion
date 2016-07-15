@@ -38,3 +38,18 @@ public enum ResourceEnums {
     Mana,
     NumResourceEnums
 }
+
+enum DamageElement {
+    Physical,
+    Fire,
+    None,
+    NumElementsEnums
+}
+
+enum SkillModification {
+    Melee,
+    Ranged,
+    Spell,
+    None,
+    NumElementsEnums
+}

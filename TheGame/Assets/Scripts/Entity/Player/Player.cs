@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 using System.Collections;
 
 
@@ -8,7 +8,13 @@ public class Player : Entity {
     PlayerMovement movement;
     int write = 250;
     int cWrite = 0;
-	// Use this for initialization
+
+    #region UI
+    public Slider Healthbar;
+    public Slider Manabar;
+    #endregion
+
+    // Use this for initialization
 
     void Awake() {
         InstantiateBase();
@@ -29,13 +35,17 @@ public class Player : Entity {
        
         UpdatePlayerAction();
         cWrite += 1;
-        modifyStat(StatEnums.Stamina, 1);
+        //modifyStat(StatEnums.Stamina, 1);
+
+        Debug.Log(resources.getResourceCurVal(ResourceEnums.Health) / resources.getResourceMaxVal(ResourceEnums.Health));
+       Healthbar.value =  resources.getResourceCurVal(ResourceEnums.Health) / resources.getResourceMaxVal(ResourceEnums.Health);
         if (cWrite >= write) {
+            takeDamage(5);
             cWrite = 0;
-            Debug.Log("Stamina " + stats.getStatValue(StatEnums.Stamina));
-            Debug.Log("AttribLife " + attributes.getAttributeVal(AttributeEnums.Health));
-            Debug.Log("MaxLife " + resources.getResourceMaxVal(ResourceEnums.Health));
-            Debug.Log("CurLife " + resources.getResourceCurVal(ResourceEnums.Health));
+            //Debug.Log("Stamina " + stats.getStatValue(StatEnums.Stamina));
+            //Debug.Log("AttribLife " + attributes.getAttributeVal(AttributeEnums.Health));
+            //Debug.Log("MaxLife " + resources.getResourceMaxVal(ResourceEnums.Health));
+            //Debug.Log("CurLife " + resources.getResourceCurVal(ResourceEnums.Health));
         }
             
 	}

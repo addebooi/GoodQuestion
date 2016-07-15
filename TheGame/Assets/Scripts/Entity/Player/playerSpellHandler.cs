@@ -17,12 +17,12 @@ public struct damageParams {
 }
 
 public class playerSpellHandler : MonoBehaviour {
-    List<Skill> skills;
+    //List<Skill> skills;
     public List<GameObject> spellPrefabs;
 
 	// Use this for initialization
 	void Start () {
-        skills = new List<Skill>();
+        //skills = new List<Skill>();
         //skills.Add(new Fireball());
 	    
 	}

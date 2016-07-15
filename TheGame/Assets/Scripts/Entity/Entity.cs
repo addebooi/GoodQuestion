@@ -31,7 +31,7 @@ public class Entity : MonoBehaviour {
 
 
     public void takeDamage(float damage) {
-        resources.modifyCurValue(ResourceEnums.Health, damage);
+        resources.modifyCurValue(ResourceEnums.Health, -damage);
 
 
         //ENTITY DEAD
