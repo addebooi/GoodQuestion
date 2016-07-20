@@ -4,10 +4,11 @@ using System.Collections;
 
 
 public class BaseStat  {
+    [SerializeField]
     float value;
 
     public BaseStat() {
-        value = 0;
+        value = 20;
     }
 
     public void modifyValue(float val) {

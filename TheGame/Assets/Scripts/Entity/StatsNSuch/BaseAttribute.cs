@@ -41,5 +41,9 @@ public class BaseAttribute {
             value = 0;
 
     }
+
+    public float getModifiedValueChange(float val) {
+        return statModifier * val;
+    }
     
 }

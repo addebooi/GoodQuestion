@@ -35,7 +35,7 @@ public class playerSpellHandler : MonoBehaviour {
             if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 500f)){
                 GameObject cube = (GameObject)Instantiate(spellPrefabs[0], transform.position, Quaternion.identity);
                 cube.SendMessage("ActivateSkill", new damageParams(2, transform.position,
-                    Vector3.Normalize(new Vector3(hit.point.x, transform.position.y, hit.point.z) - transform.position), 20));
+                    Vector3.Normalize(new Vector3(hit.point.x, transform.position.y, hit.point.z) - transform.position), 20), SendMessageOptions.DontRequireReceiver);
             }
             
         }

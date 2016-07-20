@@ -3,22 +3,23 @@
 using System.Collections;
 
 
-public class ResourceHandler {
+public class ResourceHandler : MonoBehaviour {
     private Resource[] resources;
     private Resource[] resourcesFromAttributes;
 
-
-    public ResourceHandler() {
+    void Start() {
         resources = new Resource[(int)ResourceEnums.NumResourceEnums];
         for (uint i = 0; i < (int)ResourceEnums.NumResourceEnums; i++) { resources[i] = new Resource(); }
 
         resourcesFromAttributes = new Resource[(int)ResourceEnums.NumResourceEnums];
         for (uint i = 0; i < (int)ResourceEnums.NumResourceEnums; i++) { resourcesFromAttributes[i] = new Resource(); }
         setupBasicResources();
-        
     }
 
+
     public void setResourcesFromAttribute(ResourceEnums resource, float val) {
+
+        //1000 LIV -> 800
         resources[(int)resource].modifyMaxValue(-resourcesFromAttributes[(int)resource].getMaxValue());
 
         resourcesFromAttributes[(int)resource].setMaxValue(val);
@@ -26,7 +27,6 @@ public class ResourceHandler {
         resources[(int)resource].modifyMaxValue(resourcesFromAttributes[(int)resource].getMaxValue());
 
     }
-
 
     private void setupBasicResources() {
 
@@ -40,7 +40,12 @@ public class ResourceHandler {
     }
 
     public void modifyMaxValue(ResourceEnums resource, float val) {
+
+        float valueBeforeChange = resources[(int)resource].getMaxValue();
+
         resources[(int)resource].modifyMaxValue(val);
+
+        Debug.Log("MAIN!!!: " + resource.ToString() + " " + valueBeforeChange + " -> " + resources[(int)resource].getMaxValue());
     }
 
     public void modifyCurValue(ResourceEnums resource, float val) {
