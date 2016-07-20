@@ -13,10 +13,16 @@ public class BaseStat  {
 
     public void modifyValue(float val) {
         this.value += val;
+
+        if (value < 0)
+            value = 0;
     }
 
     public void setValue(float val) {
         this.value = val;
+
+        if (value < 0)
+            value = 0;
     }
 
     public float getValue() {

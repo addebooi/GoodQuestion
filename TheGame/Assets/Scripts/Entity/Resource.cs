@@ -7,16 +7,16 @@ public class Resource{
     float maxValue;
     float curValue;
 
-    AttributeEnums attributeModifier;
-    float modifierMultiplier;
+    StatEnums statModifierType;
+    float statModifier;
 
     
 
     public Resource() {
         maxValue = 0;
         curValue = maxValue;
-        attributeModifier = AttributeEnums.None;
-        modifierMultiplier = 1;
+        statModifier = 1;
+        statModifierType = StatEnums.None;
     }
 
     public void modifyMaxValue(float val) {
@@ -54,62 +54,16 @@ public class Resource{
             curValue = maxValue;
     }
 
-    public bool hasAttriMulti(AttributeEnums attriMulti) {
-        return this.attributeModifier == attriMulti;
+    public bool hasStatModifier(StatEnums statModi) {
+        return this.statModifierType == statModi;
     }
-    //private float maxHealth;
-    //private float currentHealth;
 
-    //private float maxResource;
-    //private float currentResource;
+    public void setStatModifier(StatEnums stat, float modifier) {
+        this.statModifierType = stat;
+        this.statModifier = modifier;
+    }
 
-    
-    //public float CurrentHealth {
-    //    get { return currentHealth; }
-    //    set { currentHealth = value; }
-    //}
-
-    //public float MaxHealth {
-    //    get { return maxHealth; }
-    //    set { maxHealth = value; }
-    //}
-
-    //public float CurrentResource {
-    //    get { return CurrentResource; }
-    //    set { CurrentResource = value; }
-    //}
-
-    //public float MaxResource {
-    //    get { return MaxResource; }
-    //    set { MaxResource = value; }
-    //}
-
-
-    //public void addMaxHealth(float health) {
-    //    this.maxHealth += health;
-    //    currentHealth += health;
-    //}
-
-    //public void removeMaxHealth(float health) {
-    //    this.maxHealth -= health;
-    //    if (this.maxHealth < 1) { }
-    //        this.maxHealth = 1;
-
-    //    if (currentHealth > maxHealth)
-    //        currentHealth = maxHealth;
-    //}
-
-    //public void addMaxResource(float resource) {
-    //    this.maxHealth += resource;
-    //    currentHealth += resource;
-    //}
-
-    //public void removeMaxResource(float resource) {
-    //    this.maxHealth -= resource;
-    //    if (this.maxHealth < 1) { }
-    //    this.maxHealth = 1;
-
-    //    if (currentHealth > maxHealth)
-    //        currentHealth = maxHealth;
-    //}
+    public float getStatModifiedValue(float val) {
+        return val * statModifier;
+    }
 }

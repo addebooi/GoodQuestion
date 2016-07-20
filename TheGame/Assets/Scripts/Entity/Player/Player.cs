@@ -43,7 +43,7 @@ public class Player : Entity {
         //Healthbar.value =  resources.getResourceCurVal(ResourceEnums.Health) / resources.getResourceMaxVal(ResourceEnums.Health);
         if (cWrite >= write) {
             cWrite = 0;
-            tempStats.modifyStat(StatEnums.Stamina, -10);
+            tempStats.modifyStat(StatEnums.Intelligence, 10);
         }
        //     takeDamage(5);
        //     

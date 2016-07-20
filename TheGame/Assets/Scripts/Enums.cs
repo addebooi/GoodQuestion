@@ -25,8 +25,6 @@ public enum AttributeEnums {
     SpellDamageMulti,
     MelleDamageMulti,
     //Defences
-    Health,
-    Mana,
     Armour,
     
     None,

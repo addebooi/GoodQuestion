@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Constants {
     public enum entityState {
@@ -20,6 +21,12 @@ public class Constants {
     public enum skillType {
         PROJECTILE,
         NUMSKILLTYPES
+    }
+}
+
+public class parseEnum<T> {
+    public T getEnumFromInt(int index) {
+        return (T)Enum.Parse(typeof(T), index.ToString()) ;
     }
 }
 
