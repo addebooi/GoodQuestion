@@ -8,8 +8,7 @@ public class ResourceHandler : MonoBehaviour {
     private Resource[] resourcesFromAttributes;
     parseEnum<ResourceEnums> parser;
 
-
-    void Awake  () {
+    void Awake() {
         parser = new parseEnum<ResourceEnums>();
         resources = new Resource[(int)ResourceEnums.NumResourceEnums];
         for (uint i = 0; i < (int)ResourceEnums.NumResourceEnums; i++) { resources[i] = new Resource(); }
@@ -18,7 +17,6 @@ public class ResourceHandler : MonoBehaviour {
         for (uint i = 0; i < (int)ResourceEnums.NumResourceEnums; i++) { resourcesFromAttributes[i] = new Resource(); }
         setupBasicResources();
     }
-
 
     public void setResourcesFromAttribute(ResourceEnums resource, float val) {
 

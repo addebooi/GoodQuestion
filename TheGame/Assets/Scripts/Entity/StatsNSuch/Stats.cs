@@ -14,12 +14,16 @@ public class Stats : MonoBehaviour {
 
     parseEnum<StatEnums> parser;
 
-    void Start() {
+    void Awake() {
         attributeRef = GetComponent<Attributes>();
         resourceHandlerRef = GetComponent<ResourceHandler>();
         parser = new parseEnum<StatEnums>();
 
         stats = new BaseStat[(int)StatEnums.NumStatEnums];
+    }
+
+    void Start() {
+        
         for (int i = 0; i < (int)StatEnums.NumStatEnums; i++) {
             stats[i] = new BaseStat();
 

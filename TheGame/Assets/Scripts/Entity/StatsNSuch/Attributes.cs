@@ -10,6 +10,7 @@ public class Attributes : MonoBehaviour  {
 
     parseEnum<AttributeEnums> parser;
 
+
     void Awake() {
         parser = new parseEnum<AttributeEnums>();
         attributes = new BaseAttribute[(int)AttributeEnums.NumAttrEnums];
@@ -18,6 +19,7 @@ public class Attributes : MonoBehaviour  {
 
         setupBaseAttributes();
     }
+
 
     //public Attributes() {
         
